@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="loadDoc()">
+    <h2>API test</h2>
+
+    <ul>
+        <li id="medicineId"></li>
+        <li id="m_name"></li>
+        <li id="man_date"></li>
+        <li id="ex_date"></li>
+        <li id="m_category"></li>
+        <li id="stock"></li>
+    </ul>
+
+    function loadDoc()
+    {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function()
+        {
+            if (this.readyState == 4 && this.status == 200)
+            {
+                var obj_arr = JSON.parse(this.responseText);
+                document.getElementById("medicineId").src = obj_arr[0].id;
+                document.getElementById("m_name").src = obj_arr[0].id;
+                document.getElementById("man_date").src = obj_arr[0].id;
+                document.getElementById("ex_date").src = obj_arr[0].id;
+                document.getElementById("m_category").src = obj_arr[0].id;
+                document.getElementById("stock").src = obj_arr[0].id;
+            }
+        };
+        xhttp.open("GET", "http://127.0.0.1:8000/api/medicine/list");
+        xhttp.send();
+    }
+</body>
+</html>
