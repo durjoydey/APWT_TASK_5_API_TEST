@@ -14,8 +14,8 @@
                 <td>{{$medicine->m_name}}</td>
                 <td>{{$medicine->man_date}}</td>
                 <td>{{$medicine->ex_date}}</td>
-                <td>{{medicine->m_category}}</td>
-                <td>{{medicine->stock}}</td>
+                <td>{{$medicine->m_category}}</td>
+                <td>{{$medicine->stock}}</td>
             </tr>
         @endforeach
     </table>

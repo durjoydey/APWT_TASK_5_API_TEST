@@ -22,5 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //API test
 Route::get('/medicine/list',[MedicineController::class,'APIList']);
-Route::post('/medicine/list',[MedicineController::class,'APIPost']);
+Route::post('/medicine/create',[MedicineController::class,'APIPost']);
 
